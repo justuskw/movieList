@@ -2,9 +2,10 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentList: [],
+            currentList: this.props.movies,
             textBox: '',
-            addMovieText: ''
+            addMovieText: '',
+            // watched: false,
         }
     }
 
@@ -43,6 +44,15 @@ class App extends React.Component {
         })
     }
 
+    // toggleWatchButtonOnClick() {
+    //     console.log('this works')
+    //     this.setState({
+    //         watched: !this.state.watched
+    //     })
+    // }
+
+
+
     render() {
         return (
             <div>
@@ -59,7 +69,10 @@ class App extends React.Component {
                 </div>
                 <div>
                     {this.state.currentList.map((movie,i) => 
-                        <window.MovieList movie={movie} key={i} />
+                        <window.MovieList movie={movie} key={i} 
+                            // toggleWatchButtonOnClick={this.toggleWatchButtonOnClick.bind(this)}
+                            // watched={this.state.watched}
+                            />
                     )}
                 </div>
             </div> 
