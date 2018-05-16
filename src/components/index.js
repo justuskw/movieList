@@ -8,4 +8,4 @@ var movies = [
 
 
 
-ReactDOM.render(<window.App movies={movies} />, document.getElementById('app'));
+ReactDOM.render(<window.App />, document.getElementById('app'));

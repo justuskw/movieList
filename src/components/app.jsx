@@ -2,8 +2,9 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentList: this.props.movies,
-            textBox: ''
+            currentList: [],
+            textBox: '',
+            addMovieText: ''
         }
     }
 
@@ -24,27 +25,44 @@ class App extends React.Component {
         }
       }
 
-    handleClick() {
+    handleSearchClick() {
         this.setState({
             currentList: this.filterMovies(this.state.textBox)
+        })
+    }
+
+    handleAddMovieClick() {
+        this.setState({
+            currentList: this.state.currentList.concat([{title: this.state.addMovieText}])
+        })
+    }
+
+    addMovieTextBoxChange(text) {
+        this.setState({
+            addMovieText: text
         })
     }
 
     render() {
         return (
             <div>
-            <h1>MovieList</h1>
-            <div><window.Search 
+                <h1>MovieList</h1>
+                <div><AddMovie 
+                    handleAddMovieClick={this.handleAddMovieClick.bind(this)}
+                    addMovieTextBoxChange={this.addMovieTextBoxChange.bind(this)}
+                /></div>
+                <div><window.Search 
                     movies={this.state.currentList} 
-                    search={this.handleClick.bind(this)} 
+                    search={this.handleSearchClick.bind(this)} 
                     textBoxChange={this.textBoxChange.bind(this)}
-                    /></div>
-            <div>
-                {this.state.currentList.map((movie,i) => 
-                   <window.MovieList movie={movie} key={i} />
-                )}
-            </div>
-        </div> 
+                    />
+                </div>
+                <div>
+                    {this.state.currentList.map((movie,i) => 
+                        <window.MovieList movie={movie} key={i} />
+                    )}
+                </div>
+            </div> 
         )
     }
 }
