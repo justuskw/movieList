@@ -5,7 +5,7 @@ class App extends React.Component {
             currentList: this.props.movies,
             textBox: '',
             addMovieText: '',
-            // watched: false,
+            view: 'all'
         }
     }
 
@@ -34,7 +34,10 @@ class App extends React.Component {
 
     handleAddMovieClick() {
         this.setState({
-            currentList: this.state.currentList.concat([{title: this.state.addMovieText}])
+            currentList: this.state.currentList.concat([{
+                title: this.state.addMovieText,
+                watched: false
+            }])
         })
     }
 
@@ -44,19 +47,43 @@ class App extends React.Component {
         })
     }
 
-    // toggleWatchButtonOnClick() {
-    //     console.log('this works')
-    //     this.setState({
-    //         watched: !this.state.watched
-    //     })
-    // }
+    filterToWatchOnClick() {
+        this.setState({
+            currentList: this.filterByToWatch()
+        })
+    }
 
+    filterByToWatch() {
+        return this.state.currentList.filter(movie => {
+            return movie.watched === false;
+        })
+    }
 
+    filterWatchedOnClick() {
+        this.setState({
+            currentList: this.filterByWatched()
+        })
+    }
+
+    filterByWatched() {
+        return this.state.currentList.filter(movie => {
+            return movie.watched;
+        })
+    }
+
+    toggleWatchButtonOnClick(e) {
+        e.movie.watched = e.movie.watched ? !e.movie.watched : true;
+        this.setState({
+            view: this.state.view
+        })
+    }
 
     render() {
         return (
             <div>
                 <h1>MovieList</h1>
+                <button  onClick={this.filterToWatchOnClick.bind(this)}>filter to watch</button>
+                <button onClick={this.filterWatchedOnClick.bind(this)}>filter watched</button>
                 <div><AddMovie 
                     handleAddMovieClick={this.handleAddMovieClick.bind(this)}
                     addMovieTextBoxChange={this.addMovieTextBoxChange.bind(this)}
@@ -70,8 +97,7 @@ class App extends React.Component {
                 <div>
                     {this.state.currentList.map((movie,i) => 
                         <window.MovieList movie={movie} key={i} 
-                            // toggleWatchButtonOnClick={this.toggleWatchButtonOnClick.bind(this)}
-                            // watched={this.state.watched}
+                            toggleWatchButtonOnClick={this.toggleWatchButtonOnClick.bind(this)}
                             />
                     )}
                 </div>
