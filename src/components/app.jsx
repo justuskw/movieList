@@ -5,7 +5,6 @@ class App extends React.Component {
             currentList: this.props.movies,
             textBox: '',
             addMovieText: '',
-            view: 'all'
         }
     }
 
@@ -36,7 +35,8 @@ class App extends React.Component {
         this.setState({
             currentList: this.state.currentList.concat([{
                 title: this.state.addMovieText,
-                watched: false
+                watched: false,
+                year: 2001
             }])
         })
     }
