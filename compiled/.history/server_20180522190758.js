@@ -1,0 +1,15 @@
+'use strict';
+
+var express = require('express');
+var path = require('path');
+
+var app = express();
+
+var port = 3000;
+
+app.app.get();
+
+app.listen(port, function () {
+    console.log('app is listenting on ' + port);
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy5oaXN0b3J5L3NlcnZlcl8yMDE4MDUyMjE5MDc1OC5qcyJdLCJuYW1lcyI6WyJleHByZXNzIiwicmVxdWlyZSIsInBhdGgiLCJhcHAiLCJwb3J0IiwiZ2V0IiwibGlzdGVuIiwiY29uc29sZSIsImxvZyJdLCJtYXBwaW5ncyI6Ijs7QUFBQSxJQUFNQSxVQUFVQyxRQUFRLFNBQVIsQ0FBaEI7QUFDQSxJQUFNQyxPQUFPRCxRQUFRLE1BQVIsQ0FBYjs7QUFFQSxJQUFNRSxNQUFNSCxTQUFaOztBQUVBLElBQU1JLE9BQU8sSUFBYjs7QUFFQUQsSUFFQUEsR0FGQSxDQUVJRSxHQUZKOztBQUlBRixJQUFJRyxNQUFKLENBQVdGLElBQVgsRUFBaUIsWUFBVztBQUN4QkcsWUFBUUMsR0FBUixDQUFZLDBCQUEwQkosSUFBdEM7QUFDSCxDQUZEIiwiZmlsZSI6InNlcnZlcl8yMDE4MDUyMjE5MDc1OC5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGV4cHJlc3MgPSByZXF1aXJlKCdleHByZXNzJyk7XG5jb25zdCBwYXRoID0gcmVxdWlyZSgncGF0aCcpO1xuXG5jb25zdCBhcHAgPSBleHByZXNzKCk7XG5cbmNvbnN0IHBvcnQgPSAzMDAwO1xuXG5hcHAuXG5cbmFwcC5nZXQoKVxuXG5hcHAubGlzdGVuKHBvcnQsIGZ1bmN0aW9uKCkge1xuICAgIGNvbnNvbGUubG9nKCdhcHAgaXMgbGlzdGVudGluZyBvbiAnICsgcG9ydCk7XG59KSJdfQ==

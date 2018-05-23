@@ -1,0 +1,13 @@
+'use strict';
+
+var express = require('express');
+var path = require('path');
+
+var app = express();
+
+var port = 3000;
+
+app.listen(port, function () {
+    console.log('app is listenting on ' + port);
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy5oaXN0b3J5L3NlcnZlcl8yMDE4MDUyMjE5MDYzMS5qcyJdLCJuYW1lcyI6WyJleHByZXNzIiwicmVxdWlyZSIsInBhdGgiLCJhcHAiLCJwb3J0IiwibGlzdGVuIiwiY29uc29sZSIsImxvZyJdLCJtYXBwaW5ncyI6Ijs7QUFBQSxJQUFNQSxVQUFVQyxRQUFRLFNBQVIsQ0FBaEI7QUFDQSxJQUFNQyxPQUFPRCxRQUFRLE1BQVIsQ0FBYjs7QUFFQSxJQUFNRSxNQUFNSCxTQUFaOztBQUVBLElBQU1JLE9BQU8sSUFBYjs7QUFFQUQsSUFBSUUsTUFBSixDQUFXRCxJQUFYLEVBQWlCLFlBQVc7QUFDeEJFLFlBQVFDLEdBQVIsQ0FBWSwwQkFBMEJILElBQXRDO0FBQ0gsQ0FGRCIsImZpbGUiOiJzZXJ2ZXJfMjAxODA1MjIxOTA2MzEuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBleHByZXNzID0gcmVxdWlyZSgnZXhwcmVzcycpO1xuY29uc3QgcGF0aCA9IHJlcXVpcmUoJ3BhdGgnKTtcblxuY29uc3QgYXBwID0gZXhwcmVzcygpO1xuXG5jb25zdCBwb3J0ID0gMzAwMDtcblxuYXBwLmxpc3Rlbihwb3J0LCBmdW5jdGlvbigpIHtcbiAgICBjb25zb2xlLmxvZygnYXBwIGlzIGxpc3RlbnRpbmcgb24gJyArIHBvcnQpO1xufSkiXX0=
