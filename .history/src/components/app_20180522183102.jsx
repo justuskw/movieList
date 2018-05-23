@@ -84,17 +84,10 @@ class App extends React.Component {
         })
     }
 
-    showAllMovies() {
-        this.setState({
-            currentList: this.state.all
-        })
-    }
-
     render() {
         return (
             <div>
                 <h1>MovieList</h1>
-                <button  onClick={this.showAllMovies.bind(this)}>show all movies</button>
                 <button  onClick={this.filterToWatchOnClick.bind(this)}>filter to watch</button>
                 <button onClick={this.filterWatchedOnClick.bind(this)}>filter watched</button>
                 <div><AddMovie 
