@@ -22,6 +22,7 @@ class MovieList extends React.Component {
             <div>
                 <div onClick={this.handleTitleClick.bind(this)}>{this.props.movie.title}</div>
                 <div>{details}</div>
+                <button type="button" onClick={() => this.props.toggleWatchButtonOnClick(this.props)}>{watched}</button>
             </div>
         )
     }

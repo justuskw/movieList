@@ -16,12 +16,13 @@ class MovieList extends React.Component {
     render() {
 
         var watched = this.props.movie.watched ? 'watched' : 'to watch';
-        var details = this.state.movieDetails ? <MovieDetails toggleWatchButtonOnClick={this.props.toggleWatchButtonOnClick} watched={watched} movie={this.props.movie} /> : '';
+        var details = this.state.movieDetails ? <MovieDetails movie={this.props.movie} /> : '';
 
         return (
             <div>
                 <div onClick={this.handleTitleClick.bind(this)}>{this.props.movie.title}</div>
                 <div>{details}</div>
+                <button type="button" onClick={() => this.props.toggleWatchButtonOnClick(this.props)}>{watched}</button>
             </div>
         )
     }
