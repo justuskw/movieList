@@ -96,7 +96,7 @@ class App extends React.Component {
             type: 'GET',
             success: function(data) {
                 console.log('success', data);
-                callback(data)
+                callback(data);
             },
             error: function() {
                 console.error('failed to get movies')
@@ -104,15 +104,18 @@ class App extends React.Component {
         })
     }
 
-    handleGetMoviesClick() {
+    callGetMovies() {
+        return this.getMovies(function(data) {
+            return data;
+        })
+    }
 
-        var callGetMovies = function(movies) {
-            this.setState({
-                all: movies,
-                currentList: movies
-            })
-        };
-        this.getMovies(callGetMovies.bind(this));
+    handleGetMoviesClick() {
+        console.log('clicked')
+        this.setState({
+            all: this.callGetMovies(),
+            currentList: this.callGetMovies()
+        })
     }
 
     render() {

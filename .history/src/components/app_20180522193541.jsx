@@ -2,10 +2,10 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentList: this.props.movies,
+            currentList: [],
             textBox: '',
             addMovieText: '',
-            all: this.props.movies
+            all: []
         }
     }
 
@@ -92,34 +92,32 @@ class App extends React.Component {
 
     getMovies(callback) {
         $.ajax({
-            url: 'http://localhost:3000/movies',
+            url: 'http://localhost:3000/',
             type: 'GET',
+            dataType: 'json',
             success: function(data) {
-                console.log('success', data);
-                callback(data)
-            },
-            error: function() {
-                console.error('failed to get movies')
+                console.log('data', data);
+                callback(data);
             }
         })
     }
 
     handleGetMoviesClick() {
-
-        var callGetMovies = function(movies) {
-            this.setState({
-                all: movies,
-                currentList: movies
+        this.setState({
+            all: this.getMovies(function(data) {
+                return data;
+            }),
+            currentList: this.getMovies(function(data) {
+                return data;
             })
-        };
-        this.getMovies(callGetMovies.bind(this));
+        })
     }
 
     render() {
         return (
             <div>
                 <h1>MovieList</h1>
-                <button onClick={this.handleGetMoviesClick.bind(this)}>get movies</button>
+                <button onCLick={this.handleGetMoviesClick.bind(this)}>get movies</button>
                 <button  onClick={this.showAllMovies.bind(this)}>show all movies</button>
                 <button  onClick={this.filterToWatchOnClick.bind(this)}>filter to watch</button>
                 <button onClick={this.filterWatchedOnClick.bind(this)}>filter watched</button>

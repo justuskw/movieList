@@ -19,7 +19,8 @@ app.get('/', function(req, res) {
     res.sendFile('/Users/justuskovats-wildenradt/movieList/index.html')
 });
 
-app.get('/movies', function(req, res) {
+app.get('/', function(req, res) {
+    console.log('reached here')
     res.send(movies);
 })
 

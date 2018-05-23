@@ -90,36 +90,21 @@ class App extends React.Component {
         })
     }
 
-    getMovies(callback) {
-        $.ajax({
-            url: 'http://localhost:3000/movies',
-            type: 'GET',
-            success: function(data) {
-                console.log('success', data);
-                callback(data)
-            },
-            error: function() {
-                console.error('failed to get movies')
-            }
-        })
+    getMovies() {
+        
     }
 
     handleGetMoviesClick() {
-
-        var callGetMovies = function(movies) {
-            this.setState({
-                all: movies,
-                currentList: movies
-            })
-        };
-        this.getMovies(callGetMovies.bind(this));
+        this.setState({
+            all: this.getMovies()
+        })
     }
 
     render() {
         return (
             <div>
                 <h1>MovieList</h1>
-                <button onClick={this.handleGetMoviesClick.bind(this)}>get movies</button>
+                <button onCLick={this.handleGetMoviesClick.bind(this)}>get movies</button>
                 <button  onClick={this.showAllMovies.bind(this)}>show all movies</button>
                 <button  onClick={this.filterToWatchOnClick.bind(this)}>filter to watch</button>
                 <button onClick={this.filterWatchedOnClick.bind(this)}>filter watched</button>

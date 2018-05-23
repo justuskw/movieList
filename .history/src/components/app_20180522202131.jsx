@@ -104,15 +104,25 @@ class App extends React.Component {
         })
     }
 
-    handleGetMoviesClick() {
+    // callGetMovies() {
+    //     return this.getMovies(function(data) {
+    //         return data;
+    //     })
+    // }
 
+    handleGetMoviesClick() {
+        // console.log('clicked')
+        // this.setState({
+        //     all: this.callGetMovies(),
+        //     currentList: this.callGetMovies()
+        // })
         var callGetMovies = function(movies) {
             this.setState({
                 all: movies,
                 currentList: movies
             })
         };
-        this.getMovies(callGetMovies.bind(this));
+        this.getMovies(callGetMovies);
     }
 
     render() {

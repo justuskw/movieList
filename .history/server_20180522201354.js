@@ -20,7 +20,8 @@ app.get('/', function(req, res) {
 });
 
 app.get('/movies', function(req, res) {
-    res.send(movies);
+    console.log('reached here')
+    res.send('hello world');
 })
 
 app.listen(port, function() {

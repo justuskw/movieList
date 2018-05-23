@@ -19,10 +19,6 @@ app.get('/', function(req, res) {
     res.sendFile('/Users/justuskovats-wildenradt/movieList/index.html')
 });
 
-app.get('/movies', function(req, res) {
-    res.send(movies);
-})
-
 app.listen(port, function() {
     console.log('app is listenting on ' + port);
 })
